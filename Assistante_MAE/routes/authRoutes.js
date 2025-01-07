@@ -11,7 +11,7 @@ router.post('/chatgpt', async (req, res) => {
     
     try {
         // Step 1: Retrieve a session ID from the API
-        const sessionResponse = await axios.post('https://aibot-nu.vercel.app/session', {}, {
+        const sessionResponse = await axios.post('https://aibot', {}, {
             headers: { 'Content-Type': 'application/json' }
         });
         
@@ -20,7 +20,7 @@ router.post('/chatgpt', async (req, res) => {
         if (!sessionId) return res.status(500).json({ error: 'Erreur lors de la création de la session.' });
 
         // Step 2: Send the message using the obtained session ID
-        const response = await axios.post('https://aibot-nu.vercel.app/prompts', {
+        const response = await axios.post('https://aibot', {
             userMessage: message,
             sessionId: sessionId
         }, {
