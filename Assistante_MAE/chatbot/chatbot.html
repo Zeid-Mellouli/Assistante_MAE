@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assistance MAE - Chat Interface</title>
+  <link rel="stylesheet" href="chatbotstyles.css">
+</head>
+
+<body>
+  <div class="main-container">
+    <!-- Sidebar pour l'historique des discussions -->
+    <div class="sidebar" id="sidebar">
+      <h3>Discussions Terminées</h3>
+      <ul id="discussion-list">
+        <li onclick="sendMessageToChatbot('assurance-auto')">Assurance Auto</li>
+        <li onclick="sendMessageToChatbot('assurance-habitation')">Assurance Habitation</li>
+        <li onclick="sendMessageToChatbot('assurance-sante')">Assurance Santé</li>
+        <li onclick="sendMessageToChatbot('assurance-vie')">Assurance Vie</li>
+        <li onclick="sendMessageToChatbot('assurance-voyage')">Assurance Voyage</li>
+        <a class="fresh-link" href="https://assistante-mae.onrender.com/reclamation/reclamation.html" target="_blank">
+          <li>Réclamations </li>
+        </a>
+        <li onclick="sendMessageToChatbot('prime-paiements')">Prime et Paiements</li>
+        <li onclick="sendMessageToChatbot('assurance-entreprises')">Assurance pour Entreprises</li>
+      </ul>
+      <button id="new-convo">Nouvelle Discussion</button>
+    </div>
+
+
+    <!-- Zone de chat principal -->
+    <div class="chat-container">
+      <div class="chat-header">
+        <h3>Assistance MAE</h3>
+        <div class="profile-menu">
+          <button id="profile-button">
+            <img src="img/Vector.svg" alt="Profil">
+            Profil
+          </button>
+          <div class="dropdown-content" id="profile-dropdown">
+            <a href="https://assistante-mae.onrender.com//login_signup/login_signup.html">Déconnecter</a>
+            <a href="https://assistante-mae.onrender.com//profil/profil.html">Profil</a>
+            <a href="https://assistante-mae.onrender.com//main.html">Menu</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-history" id="chat-history">
+        <!-- Historique des messages sera ajouté ici -->
+      </div>
+
+      <div class="chat-input">
+
+
+
+
+        <input type="text" id="message-input" placeholder="Écrire un message...">
+        <label for="file-input" class="file-label">📎</label>
+        <input type="file" id="file-input" style="display: none;">
+        <button id="send-button">Envoyer</button>
+        <button id="microphone-button">🎤</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="chatbotscripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+/* profile.css */
+
+/* Body and container styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgba(149, 193, 33, 0.1); /* Légère teinte verte pour le fond */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.profile-container {
+  background-color: rgba(254, 254, 254, 1); /* Fond blanc pour un bon contraste */
+  border-radius: 12px;
+  padding: 30px;
+  width: 340px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  font-size: 28px;
+  color: rgba(24, 129, 81, 1); /* Vert foncé */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Profile image */
+.profile-image {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.profile-image:hover {
+  transform: scale(1.1);
+}
+
+/* Profile info section */
+.profile-info {
+  margin: 20px 0;
+  text-align: left;
+  font-size: 16px;
+  color: rgba(24, 129, 81, 1); /* Vert foncé */
+}
+
+.profile-info span {
+  font-weight: 600;
+}
+
+/* Button container */
+.button-container {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px; /* Espace entre les boutons */
+}
+
+.logout-btn, .update-btn {
+  color: rgba(254, 254, 254, 1); /* Blanc pour le texte */
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.logout-btn {
+  background-color: rgba(149, 193, 33, 1); /* Vert clair */
+}
+
+.logout-btn:hover {
+  background-color: rgba(24, 129, 81, 1); /* Vert foncé */
+  transform: scale(1.05);
+}
+
+.update-btn {
+  background-color: rgba(175, 208, 93, 1); /* Couleur légèrement différente pour le bouton Update */
+}
+
+.update-btn:hover {
+  background-color: rgba(139, 173, 73, 1); /* Couleur plus foncée au survol */
+  transform: scale(1.05);
+}

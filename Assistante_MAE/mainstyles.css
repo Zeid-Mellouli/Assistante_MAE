@@ -1,0 +1,234 @@
+/* Conteneur principal pour le menu circulaire */
+.logo-container {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  width: 80px; /* Taille initiale */
+  height: 80px; /* Taille initiale */
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(24, 129, 81, 1), rgba(149, 193, 33, 1)); /* Dégradé de couleurs */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease, height 0.3s ease, left 0.3s ease, transform 0.5s ease; /* Transition pour l'agrandissement */
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 10;
+  border: 3px solid rgba(254, 254, 254, 0.3); /* Bordure subtile */
+  transform: translateY(-50%); /* Centrer verticalement */
+}
+
+/* Agrandissement au survol du logo */
+.logo-container:hover {
+  width: 180px; /* Taille agrandie au survol */
+  height: 180px; /* Taille agrandie au survol */
+}
+
+/* Logo au centre */
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  z-index: 1; /* Placer le logo au-dessus */
+}
+
+/* Conteneur des boutons de menu */
+.menu-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 220px; /* Taille fixe */
+  height: 220px; /* Taille fixe */
+  opacity: 0;
+  pointer-events: none; /* Les boutons ne peuvent pas être cliqués avant l'apparition */
+  transition: opacity 0.3s ease, transform 0.5s ease; /* Transition pour l'apparition des boutons */
+  z-index: 0;
+}
+
+/* Affichage du menu au survol */
+.logo-container:hover .menu-container {
+  opacity: 1;
+  pointer-events: auto; /* Activation des interactions avec les boutons */
+  transform: translate(-50%, -50%) scale(1); /* Réinitialiser la transformation au survol */
+}
+
+/* Boutons de menu */
+.menu-button {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.5s ease;
+  cursor: pointer;
+  margin: 0;
+  opacity: 0; /* Les boutons sont invisibles par défaut */
+  transform: translate(0, 0); /* Position initiale des boutons */
+}
+
+/* Taille de l'icône dans le bouton */
+.menu-button img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* Boutons de menu au survol */
+.menu-button:hover {
+  background-color: rgba(175, 208, 93, 1);
+  transform: scale(1.1); /* Agrandissement léger au survol */
+}
+
+/* Animation d'apparition des boutons */
+.menu-button:nth-child(1) {
+  transform: translate(-50%, -120px) rotate(0deg) translateX(120px); /* Bouton supérieur */
+  animation: moveIn 0.6s ease forwards 0.2s; /* Animation d'apparition */
+}
+
+.menu-button:nth-child(2) {
+  transform: translate(-50%, -120px) rotate(90deg) translateX(120px); /* Bouton droit */
+  animation: moveIn 0.6s ease forwards 0.4s; /* Animation d'apparition */
+}
+
+.menu-button:nth-child(3) {
+  transform: translate(-50%, -120px) rotate(180deg) translateX(120px); /* Bouton inférieur */
+  animation: moveIn 0.6s ease forwards 0.6s; /* Animation d'apparition */
+}
+
+/* Animation d'apparition des boutons */
+@keyframes moveIn {
+  from {
+    opacity: 0;
+    transform: translate(0, 0); /* Les boutons commencent à la position initiale */
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0); /* Les boutons arrivent à leur position finale */
+  }
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+  .logo-container {
+    width: 70px;
+    height: 70px;
+  }
+
+  .logo-container:hover {
+    width: 140px;
+    height: 140px;
+  }
+
+  .menu-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Responsive pour très petits écrans (ex : smartphones) */
+@media (max-width: 480px) {
+  .logo-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-container:hover {
+    width: 120px;
+    height: 120px;
+  }
+
+  .menu-button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .logo {
+    width: 25px;
+    height: 25px;
+  }
+
+  .menu-container {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+#game-button{
+  margin-left: 100px;
+}
+/* main.css */
+
+/* Full-page content style */
+#content {
+  background-color: rgba(24, 129, 81, 1); /* Vert foncé pour un fond élégant */
+  color: rgba(254, 254, 254, 1); /* Blanc pur pour le texte */
+  padding: 50px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1); /* Ombre douce intérieure */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Heading style with attention-catching animation */
+#content h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: rgba(254, 254, 254, 1);
+  margin: 0;
+  animation: fadeInGlow 3s ease-in-out infinite alternate; /* Animation subtile */
+}
+
+/* Subtle background gradient */
+body {
+  background: linear-gradient(to bottom, rgba(149, 193, 33, 0.1), rgba(24, 129, 81, 0.1));
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Button style (optional for interactions) */
+.button {
+  background-color: rgba(24, 129, 81, 1);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 30px;
+}
+
+.button:hover {
+  background-color: rgba(20, 100, 70, 1);
+}
+
+/* Glow effect animation */
+@keyframes fadeInGlow {
+  0% {
+    text-shadow: 0 0 8px rgba(149, 193, 33, 0.4), 0 0 16px rgba(149, 193, 33, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 16px rgba(149, 193, 33, 0.6), 0 0 24px rgba(149, 193, 33, 0.8);
+  }
+}
+
+
+

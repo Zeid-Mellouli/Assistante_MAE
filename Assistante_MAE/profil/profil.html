@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+  <div class="profile-container">
+    <img id="profile-image" class="profile-image" src="./User.svg" alt="Profile Picture">
+    <h1>User Profile</h1>
+    <div class="profile-info">
+      <p><span>Email:</span> <span id="profile-email"></span></p>
+      <p><span>First Name:</span> <span id="profile-firstname"></span></p>
+      <p><span>Last Name:</span> <span id="profile-lastname"></span></p>
+      <p><span>Phone:</span> <span id="profile-phone"></span></p>
+      <p><span>Situation:</span> <span id="profile-situation"></span></p>
+    </div>
+    <div class="button-container">
+      <button class="logout-btn" onclick="logout()">Logout</button>
+      <button class="update-btn" onclick="updateProfile()">Update</button>
+    </div>
+  </div>
+
+  <script src="profilescripts.js"></script> <!-- Link to the external JS -->
+</body>
+</html>
