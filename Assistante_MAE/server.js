@@ -22,7 +22,7 @@ const chatRoute = require("./routes/authRoutes");
 app.use(bodyParser.json());
 
 // MongoDB connection setup using Mongoose
-const mongoUrl = 'mongodb+srv://Assistance_MAE:BPuzmpaUmZj4EJgc@dark.munyf.mongodb.net/?retryWrites=true&w=majority&appName=Dark';
+const mongoUrl = 'mongodb';
 
 mongoose.connect(mongoUrl)
   .then(() => console.log('Connected to MongoDB'))
